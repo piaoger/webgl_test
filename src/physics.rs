@@ -18,7 +18,7 @@ pub const CONTROL_FORCE: f32 = 20.0;
 
 lazy_static! {
     pub static ref WORLD: Mutex<World<f32>> =
-        Mutex::new(World::new(time_in_sec));
+        Mutex::new(World::new());
     pub static ref PLAYER: Mutex<BodyHandle> =
         Mutex::new(BodyHandle::ground());
     pub static ref CONTROL_ACC: Mutex<(na::Vector3<f32>, ForceGeneratorHandle)> =
@@ -90,11 +90,6 @@ pub fn init_world(map_data: &map::Map, player_pos: &na::Point3<f32>) {
 #[inline]
 pub fn step() {
     WORLD.lock().unwrap().step();
-}
-
-#[inline]
-fn time_in_sec() -> f64 {
-    unsafe { intrinsics::fdiv_fast(js::now(), 1000.0) }
 }
 
 pub fn update_control_acc(lin_acc: na::Vector3<f32>) {

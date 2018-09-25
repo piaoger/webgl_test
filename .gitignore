@@ -5,9 +5,10 @@ Cargo.lock
 *.wasm
 *.js
 package-lock.json
-/out/*.d.ts
-/out/node_modules
-/out/dist
+/www/*.d.ts
+/www/node_modules
+/www/dist
+/bin/apps/
 
 .vscode/
 .DS_Store
