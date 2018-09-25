@@ -20,7 +20,7 @@ mkdir -p ${APP_ROOT}/www/lib
 cargo +nightly build --target wasm32-unknown-unknown --release
 wasm-bindgen                                                     \
     ./target/wasm32-unknown-unknown/release/"$PROJECT_NAME".wasm \
-    --out-dir ${APP_ROOT}/www/lib
+    --out-dir ${APP_ROOT}/www/src
 
 cd ${APP_ROOT}/www
 
@@ -37,8 +37,11 @@ fi
 export PATH=$PATH:./node_modules/.bin/
 
 tslint -p tsconfig.json
-tsc --outDir ${APP_ROOT}/www/lib
-wasm-gc ${APP_ROOT}/www/lib/"$PROJECT_NAME"_bg.wasm
+tsc --allowJs --outDir ${APP_ROOT}/www/lib
+wasm-gc ${APP_ROOT}/www/src/"$PROJECT_NAME"_bg.wasm
+
+cp ${APP_ROOT}/www/src/"$PROJECT_NAME"_bg.wasm ${APP_ROOT}/www/lib
+cp ${APP_ROOT}/www/src/"$PROJECT_NAME".js ${APP_ROOT}/www/lib
 
 #disable wasm-opt temporary
 #wasm-opt -O4 ./"$PROJECT_NAME"_bg.wasm

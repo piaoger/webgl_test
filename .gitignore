@@ -5,7 +5,7 @@ Cargo.lock
 *.wasm
 *.js
 package-lock.json
-/www/*.d.ts
+/www/src/*.d.ts
 /www/node_modules
 /www/dist
 /bin/apps/

@@ -22,13 +22,14 @@ cd webgl_test
 
 curdir=$(pwd)
 echo ${curdir}
-./bin/build.sh fresh
-cd server
+${curdir}/bin/build.sh fresh
+
+cd ${curdir}/server
 make
-cd ../www/dist
+cd ${curdir}/www/dist
 
 killall -9 webgl_test_server
-../../server/target/release/webgl_test_server
+${curdir}/server/target/release/webgl_test_server &
 cd ${curdir}
 
 firefox localhost:11484
