@@ -5,9 +5,7 @@ because why not, i guess
 * [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) for Rust <-->
   JavaScript interop
 * [`nalgebra`](http://nalgebra.org/) for linear algebra nonsense
-* [`nphysics`](http://nphysics.org/) as a physics engine (this uses a modified
-  version to fit `wasm-bindgen`, so you have to `git clone --recursive` and
-  whatnot)
+* [`nphysics`](http://nphysics.org/) as a physics engine
 * [`lazy-static.rs`](https://github.com/rust-lang-nursery/lazy-static.rs) for
   keeping global state
 * [`actix-web`](https://actix.rs/) for the server side
@@ -19,8 +17,9 @@ because why not, i guess
 ## try
 
 ```bash
-git clone --recursive https://github.com/AugmentedFifth/webgl_test.git
+git clone https://github.com/AugmentedFifth/webgl_test.git
 cd webgl_test
+
 ./bin/build.sh fresh
 cd server
 make
