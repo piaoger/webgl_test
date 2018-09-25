@@ -20,11 +20,16 @@ because why not, i guess
 git clone https://github.com/AugmentedFifth/webgl_test.git
 cd webgl_test
 
+curdir=$(pwd)
+echo ${curdir}
 ./bin/build.sh fresh
 cd server
 make
-cd ../out/dist
+cd ../www/dist
+
+killall -9 webgl_test_server
 ../../server/target/release/webgl_test_server
+cd ${curdir}
 
 firefox localhost:11484
 ```
