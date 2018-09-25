@@ -21,7 +21,7 @@ because why not, i guess
 ```bash
 git clone --recursive https://github.com/AugmentedFifth/webgl_test.git
 cd webgl_test
-./build.sh fresh
+./bin/build.sh fresh
 cd server
 make
 cd ../out/dist
