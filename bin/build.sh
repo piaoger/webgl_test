@@ -28,6 +28,7 @@ if [ "VAR$1" == "VARfresh" ]; then
 	setup_nodejs_env
 else
 	${THIS_FOLDER}/bootstrap.sh
+	setup_nodejs_env
     npm install
     # npm install typescript
     # npm install tslint
