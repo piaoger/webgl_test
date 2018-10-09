@@ -301,7 +301,26 @@ export function depth_func_sys(func: number): void {
     gl.depthFunc(func);
 }
 
+/// download data using Object Url
+function download(data: Uint8Array): void {
+    const url = URL.createObjectURL(new Blob([data], {type: "image/png"}));
+    window.open(url);
+ }
+
 webgl_test.then(bg => {
+
+   //bg.run_gltf();
+
+    //const bitmap = bg.test_mesh();
+    //download(bitmap);
+    const result = bg.test_compress();
+    console.log(new TextDecoder("utf-8").decode(result));
+
+
+
+
+  //  bg.test_delaunator();
+
     // Establish WebSocket correspondence
     const ws = new WebSocket(`ws://${location.host}/ws/`);
     ws.binaryType = "arraybuffer";

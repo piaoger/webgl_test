@@ -13,19 +13,46 @@
   <body>
     <canvas id="c"></canvas>
 
-
+   <ol  style="border: 1px solid #98be10;">
     <label id="controls">
       <fieldset id="translation">
         <legend>translation</legend>
 
         <label for="trans_x">trans_x</label>
         <input type="range" id="trans_x" name="trans_x" value="0" min="-50" max="50" step="any" />
+        <br/>
 
         <label for="trans_y">trans_y</label>
         <input type="range" id="trans_y" name="trans_y" value="0" min="-50" max="50" step="any" />
+        <br/>
 
         <label for="trans_z">trans_z</label>
         <input type="range" id="trans_z" name="trans_z" value="-30" min="-50" max="50" step="any" />
+        <br/>
+
+        <label for="favcity2">City</label>
+        <select id="favcity2" name="favcity2">
+          <optgroup label="Asia">
+            <option value="3">Delhi</option>
+            <option value="4">Hong Kong</option>
+            <option value="8">Mumbai</option>
+            <option value="11">Tokyo</option>
+          </optgroup>
+          <optgroup label="Europe">
+            <option value="1">Amsterdam</option>
+            <option value="5">London</option>
+            <option value="7">Moscow</option>
+          </optgroup>
+          <optgroup label="North America">
+            <option value="6">Los Angeles</option>
+            <option value="9">New York</option>
+          </optgroup>
+          <optgroup label="South America">
+            <option value="2">Buenos Aires</option>
+            <option value="10">Sao Paulo</option>
+          </optgroup>
+        </select>
+
       </fieldset>
 
       <fieldset id="lookat_eye">
@@ -33,9 +60,11 @@
 
         <label for="lookat_eye_x">lookat_eye_x</label>
         <input type="range" id="lookat_eye_x" name="lookat_eye_x" value="0" min="-50" max="50" step="any" />
+        <br/>
 
         <label for="lookat_eye_y">lookat_eye_y</label>
         <input type="range" id="lookat_eye_y" name="lookat_eye_y" value="0" min="-50" max="50" step="any" />
+        <br/>
 
         <label for="lookat_eye_z">lookat_eye_z</label>
         <input type="range" id="lookat_eye_z" name="lookat_eye_z" value="20" min="-50" max="50" step="any" />
@@ -46,14 +75,16 @@
 
         <label for="rot_x">rot_x</label>
         <input type="range" id="rot_x" name="rot_x" value="0" min="0" max="6.2831853" step="any" />
+        <br/>
 
         <label for="rot_y">rot_y</label>
         <input type="range" id="rot_y" name="rot_y" value="0" min="0" max="6.2831853" step="any" />
+        <br/>
 
         <label for="rot_z">rot_z</label>
         <input type="range" id="rot_z" name="rot_z" value="0" min="0" max="6.2831853" step="any" />
       </fieldset>
     </label>
-
+</ol>
   </body>
 </html>
