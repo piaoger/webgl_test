@@ -14,7 +14,7 @@ export function log(msg: string): void {
 }
 
 export function create_shader_sys(type: number,
-                                  src:  string): WebGLShader | undefined {
+    src: string): WebGLShader | undefined {
     const shader = gl.createShader(type);
     if (shader === null) {
         return undefined;
@@ -33,9 +33,9 @@ export function create_shader_sys(type: number,
     return undefined;
 }
 
-export function create_program(vertex_shader:   WebGLShader,
-                               fragment_shader: WebGLShader): WebGLProgram |
-                                                              undefined {
+export function create_program(vertex_shader: WebGLShader,
+    fragment_shader: WebGLShader): WebGLProgram |
+    undefined {
     const program = gl.createProgram();
     if (program === null) {
         return undefined;
@@ -56,8 +56,8 @@ export function create_program(vertex_shader:   WebGLShader,
 }
 
 export function get_uniform_location(prog: WebGLProgram,
-                                     name: string): WebGLUniformLocation |
-                                                    undefined {
+    name: string): WebGLUniformLocation |
+    undefined {
     const uni_loc = gl.getUniformLocation(prog, name);
 
     return uni_loc === null ? undefined : uni_loc;
@@ -80,27 +80,27 @@ export function bind_buffer_sys(target: number, buffer: WebGLBuffer): void {
     gl.bindBuffer(target, buffer);
 }
 
-export function buffer_data_sys(target:     number,
-                                src_data:   Uint8Array,
-                                usage:      number,
-                                src_offset: number,
-                                length:     number): void {
+export function buffer_data_sys(target: number,
+    src_data: Uint8Array,
+    usage: number,
+    src_offset: number,
+    length: number): void {
     gl.bufferData(target, src_data, usage, src_offset, length);
 }
 
-export function buffer_data_u16_sys(target:     number,
-                                    src_data:   Uint16Array,
-                                    usage:      number,
-                                    src_offset: number,
-                                    length:     number): void {
+export function buffer_data_u16_sys(target: number,
+    src_data: Uint16Array,
+    usage: number,
+    src_offset: number,
+    length: number): void {
     gl.bufferData(target, src_data, usage, src_offset, length);
 }
 
-export function buffer_data_f32_sys(target:     number,
-                                    src_data:   Float32Array,
-                                    usage:      number,
-                                    src_offset: number,
-                                    length:     number): void {
+export function buffer_data_f32_sys(target: number,
+    src_data: Float32Array,
+    usage: number,
+    src_offset: number,
+    length: number): void {
     gl.bufferData(target, src_data, usage, src_offset, length);
 }
 
@@ -121,12 +121,12 @@ export function enable_vertex_attr_array(index: number): void {
     gl.enableVertexAttribArray(index);
 }
 
-export function vertex_attr_ptr_sys(index:      number,
-                                    size:       number,
-                                    data_type:  number,
-                                    normalized: boolean,
-                                    stride:     number,
-                                    offset:     number): void {
+export function vertex_attr_ptr_sys(index: number,
+    size: number,
+    data_type: number,
+    normalized: boolean,
+    stride: number,
+    offset: number): void {
     gl.vertexAttribPointer(index, size, data_type, normalized, stride, offset);
 }
 
@@ -164,45 +164,45 @@ export function use_program(prog: WebGLProgram): void {
     gl.useProgram(prog);
 }
 
-export function draw_arrays_sys(mode:  number,
-                                first: number,
-                                count: number): void {
+export function draw_arrays_sys(mode: number,
+    first: number,
+    count: number): void {
     gl.drawArrays(mode, first, count);
 }
 
-export function draw_elements_sys(mode:      number,
-                                  count:     number,
-                                  data_type: number,
-                                  offset:    number): void {
+export function draw_elements_sys(mode: number,
+    count: number,
+    data_type: number,
+    offset: number): void {
     gl.drawElements(mode, count, data_type, offset);
 }
 
 export function uniform2ui(loc: WebGLUniformLocation,
-                           x:   number,
-                           y:   number): void {
+    x: number,
+    y: number): void {
     gl.uniform2ui(loc, x, y);
 }
 
 export function uniform2f(loc: WebGLUniformLocation,
-                          x:   number,
-                          y:   number): void {
+    x: number,
+    y: number): void {
     gl.uniform2f(loc, x, y);
 }
 
 export function uniform3f(loc: WebGLUniformLocation,
-                          x:   number,
-                          y:   number,
-                          z:   number): void {
+    x: number,
+    y: number,
+    z: number): void {
     gl.uniform3f(loc, x, y, z);
 }
 
-export function uniform_matrix3fv(loc:  WebGLUniformLocation,
-                                  data: Float32Array): void {
+export function uniform_matrix3fv(loc: WebGLUniformLocation,
+    data: Float32Array): void {
     gl.uniformMatrix3fv(loc, false, data);
 }
 
-export function uniform_matrix4fv(loc:  WebGLUniformLocation,
-                                  data: Float32Array): void {
+export function uniform_matrix4fv(loc: WebGLUniformLocation,
+    data: Float32Array): void {
     gl.uniformMatrix4fv(loc, false, data);
 }
 
@@ -242,13 +242,13 @@ export function now(): DOMHighResTimeStamp {
     return performance.now();
 }
 
-export function tex_image_2d_u8_sys(target:          number,
-                                    level:           number,
-                                    internal_format: number,
-                                    width:           number,
-                                    height:          number,
-                                    format:          number,
-                                    src_data:        Uint8Array): void {
+export function tex_image_2d_u8_sys(target: number,
+    level: number,
+    internal_format: number,
+    width: number,
+    height: number,
+    format: number,
+    src_data: Uint8Array): void {
     gl.texImage2D(
         target,
         level,
@@ -262,13 +262,13 @@ export function tex_image_2d_u8_sys(target:          number,
     );
 }
 
-export function tex_image_2d_u16_sys(target:          number,
-                                     level:           number,
-                                     internal_format: number,
-                                     width:           number,
-                                     height:          number,
-                                     format:          number,
-                                     src_data:        Uint16Array): void {
+export function tex_image_2d_u16_sys(target: number,
+    level: number,
+    internal_format: number,
+    width: number,
+    height: number,
+    format: number,
+    src_data: Uint16Array): void {
     gl.texImage2D(
         target,
         level,
@@ -287,8 +287,8 @@ export function pixel_storei_sys(pname: number, param: number): void {
 }
 
 export function tex_parameteri_sys(target: number,
-                                   pname:  number,
-                                   param:  number): void {
+    pname: number,
+    param: number): void {
     //console.log("gl.texParameteri(", target, ",", pname, ",", param, ");");
     gl.texParameteri(target, pname, param);
 }
@@ -301,7 +301,80 @@ export function depth_func_sys(func: number): void {
     gl.depthFunc(func);
 }
 
+// fetch
+// https://github.com/rustwasm/wasm-bindgen/tree/master/examples/fetch
+
+/// download data using Object Url
+export function download_blob(data: Uint8Array): void {
+    const url = URL.createObjectURL(new Blob([data], { type: "image/png" }));
+    window.open(url);
+}
+
+/// notice, TextEncoder/TextDecoder can be undefined in some platforms(Edge)
+/// see polyfill:
+/// https://github.com/rustwasm/wasm-bindgen/commit/717cfa303d2340bdb865cc2d51670395959b837b
+export function uint8array_to_string(uint8array: Uint8Array): string {
+    return new TextDecoder("utf-8").decode(uint8array);
+}
+
+export function string_to_uint8array(str: string): Uint8Array {
+    return new TextEncoder().encode(str);
+}
+
+export class AccountInfo {
+    id: string;
+    avatar: string;
+    identity_name: string;
+    display_name: string;
+
+    public constructor(id: string, avatar: string, identity_name: string, display_name: string) {
+        this.id = id;
+        this.avatar = avatar;
+        this.identity_name = identity_name;
+        this.display_name = display_name;
+    }
+
+}
+
+export class IpInfo {
+    ip: string;
+    country: string;
+    region: string;
+    city: string;
+
+    public constructor(ip: string, country: string, region: string, city: string) {
+        this.ip = ip;
+        this.country = country;
+        this.region = region;
+        this.city = city;
+    }
+
+}
+
 webgl_test.then(bg => {
+
+    //const bitmap = bg.test_mesh();
+    //download_blob(bitmap);
+
+    const prom = bg.get_account_info();
+    prom.then((data: AccountInfo) => {
+        console.log(data);
+        console.log("account id", data.id);
+    });
+
+    //const ip = bg.get_ip_info();
+    //prom.then((data: IpInfo) => {
+    //    console.log(data);
+    //    console.log("city id", data.city);
+    //});
+
+    bg.test_delaunator();
+
+    bg.run_gltf();
+
+    const result = bg.test_compress();
+    console.log(uint8array_to_string(result));
+
     // Establish WebSocket correspondence
     const ws = new WebSocket(`ws://${location.host}/ws/`);
     ws.binaryType = "arraybuffer";
@@ -317,17 +390,17 @@ webgl_test.then(bg => {
 
         const data = new Uint8Array(e.data);
         switch (data[0]) {
-        case RecvOpcode.MAP_DATA:
-            // Feed the map data into the wasm code
-            if (bg.load_map_bg(new Uint8Array(data.buffer, 1)) !== 0) {
-                throw new Error("Could not load map");
-            }
+            case RecvOpcode.MAP_DATA:
+                // Feed the map data into the wasm code
+                if (bg.load_map_bg(new Uint8Array(data.buffer, 1)) !== 0) {
+                    throw new Error("Could not load map");
+                }
 
-            // Kick off the main loop
-            window.requestAnimationFrame(main_loop);
-            break;
-        default:
-            log(`Unexpected opcode received: ${data[0]}`);
+                // Kick off the main loop
+                window.requestAnimationFrame(main_loop);
+                break;
+            default:
+                log(`Unexpected opcode received: ${data[0]}`);
         }
     });
 
@@ -403,7 +476,7 @@ webgl_test.then(bg => {
         event_queue.clear();
     }
 })
-.catch(e => {
-    log(`Error resolving promise \`webgl_test\`: ${e}`);
-    console.log(e);
-});
+    .catch(e => {
+        log(`Error resolving promise \`webgl_test\`: ${e}`);
+        console.log(e);
+    });

@@ -22,13 +22,13 @@ interface ImageBitmapRenderingContext {
 
 
 interface Window {
-    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, options: any): Promise< ImageBitmap >;
-    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, sx: number, sy: number, sw: number, sh: number, options?: any): Promise< ImageBitmap >;
+    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, options: any): Promise<ImageBitmap>;
+    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, sx: number, sy: number, sw: number, sh: number, options?: any): Promise<ImageBitmap>;
 }
 
 interface Worker {
-    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, options: any): Promise< ImageBitmap >;
-    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, sx: number, sy: number, sw: number, sh: number, options?: any): Promise< ImageBitmap >;
+    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, options: any): Promise<ImageBitmap>;
+    createImageBitmap(image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | SVGImageElement | Blob | ImageData | ImageBitmap, sx: number, sy: number, sw: number, sh: number, options?: any): Promise<ImageBitmap>;
 }
 
 

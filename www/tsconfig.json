@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost" ],
         "module": "esnext",
         "newLine": "LF",
         "noEmitOnError": true,

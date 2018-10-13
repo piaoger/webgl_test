@@ -2,7 +2,7 @@
 // Copyright (c) 2017 Max Shaydo aka MaxGraey (https://github.com/MaxGraey)
 //
 
-declare type GLint64     = number;
+declare type GLint64 = number;
 declare type GLuint64EXT = GLint64;
 
 interface WebGLQuery extends WebGLObject {
@@ -144,15 +144,15 @@ interface WebGL2RenderingContext extends WebGLRenderingContext {
     uniform2uiv(location: WebGLUniformLocation | null, data: Uint32Array | number[], srcOffset?: number, srcLength?: number): void;
     uniform3uiv(location: WebGLUniformLocation | null, data: Uint32Array | number[], srcOffset?: number, srcLength?: number): void;
     uniform4uiv(location: WebGLUniformLocation | null, data: Uint32Array | number[], srcOffset?: number, srcLength?: number): void;
-    uniformMatrix2fv(location: WebGLUniformLocation | null,   transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
+    uniformMatrix2fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix3x2fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix4x2fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix2x3fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
-    uniformMatrix3fv(location: WebGLUniformLocation | null,   transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
+    uniformMatrix3fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix4x3fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix2x4fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     uniformMatrix3x4fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
-    uniformMatrix4fv(location: WebGLUniformLocation | null,   transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
+    uniformMatrix4fv(location: WebGLUniformLocation | null, transpose: boolean, data: Float32Array, srcOffset?: number, srcLength?: number): void;
     vertexAttribI4i(index: number, x: number, y: number, z: number, w: number): void;
     vertexAttribI4ui(index: number, x: number, y: number, z: number, w: number): void;
     vertexAttribI4iv(index: number, value: Int32Array | number[]): void;

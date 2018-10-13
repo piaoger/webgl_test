@@ -224,7 +224,8 @@ impl Skybox {
                             _ =>
                                 return Err(Error::Img(
                                     "Bit depth of skybox image is not 8 nor \
-                                     16".to_owned(),
+                                     16"
+                                    .to_owned(),
                                 )),
                         },
                     );

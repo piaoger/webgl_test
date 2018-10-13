@@ -17,8 +17,7 @@ pub const STANDARD_GRAVITY: f32 = 9.806_65;
 pub const CONTROL_FORCE: f32 = 20.0;
 
 lazy_static! {
-    pub static ref WORLD: Mutex<World<f32>> =
-        Mutex::new(World::new());
+    pub static ref WORLD: Mutex<World<f32>> = Mutex::new(World::new());
     pub static ref PLAYER: Mutex<BodyHandle> =
         Mutex::new(BodyHandle::ground());
     pub static ref CONTROL_ACC: Mutex<(na::Vector3<f32>, ForceGeneratorHandle)> =
@@ -52,11 +51,11 @@ pub fn init_world(map_data: &map::Map, player_pos: &na::Point3<f32>) {
     );
 
     let hex_prism_verts = geometry::HEXAGONAL_PRISM_VERTS
-        .exact_chunks(3)
+        .chunks_exact(3)
         .map(|s| na::Point3::new(s[0], s[1], s[2]))
         .collect::<Vec<_>>();
     let hex_prism_indices = geometry::HEXAGONAL_PRISM_INDICES
-        .exact_chunks(3)
+        .chunks_exact(3)
         .map(|s| na::Point3::new(s[0], s[1], s[2]))
         .collect::<Vec<_>>();
 

@@ -111,11 +111,13 @@ pub fn init() -> Result<(), Error> {
     let vertex_shader = webgl::create_shader(
         webgl::ShaderType::VertexShader,
         VERTEX_SHADER_SRC,
-    ).ok_or_else(|| Error::Gl("Failed to create vertex shader".to_owned()))?;
+    )
+    .ok_or_else(|| Error::Gl("Failed to create vertex shader".to_owned()))?;
     let fragment_shader = webgl::create_shader(
         webgl::ShaderType::FragmentShader,
         FRAGMENT_SHADER_SRC,
-    ).ok_or_else(|| Error::Gl("Failed to create fragment shader".to_owned()))?;
+    )
+    .ok_or_else(|| Error::Gl("Failed to create fragment shader".to_owned()))?;
 
     let program = webgl::create_program(&vertex_shader, &fragment_shader)
         .ok_or_else(|| Error::Gl("Failed to link GLSL program".to_owned()))?;
@@ -144,7 +146,8 @@ pub fn init() -> Result<(), Error> {
     let displacement_uni_loc = webgl::get_uniform_location(
         &program,
         "u_displacement",
-    ).ok_or_else(|| {
+    )
+    .ok_or_else(|| {
         Error::Gl(
             "There is no uniform with the name \"u_displacement\"".to_owned(),
         )
@@ -235,11 +238,13 @@ pub fn init() -> Result<(), Error> {
     let vertex_shader = webgl::create_shader(
         webgl::ShaderType::VertexShader,
         SKYBOX_VERTEX_SHADER_SRC,
-    ).ok_or_else(|| Error::Gl("Failed to create vertex shader".to_owned()))?;
+    )
+    .ok_or_else(|| Error::Gl("Failed to create vertex shader".to_owned()))?;
     let fragment_shader = webgl::create_shader(
         webgl::ShaderType::FragmentShader,
         SKYBOX_FRAGMENT_SHADER_SRC,
-    ).ok_or_else(|| Error::Gl("Failed to create fragment shader".to_owned()))?;
+    )
+    .ok_or_else(|| Error::Gl("Failed to create fragment shader".to_owned()))?;
 
     let program = webgl::create_program(&vertex_shader, &fragment_shader)
         .ok_or_else(|| Error::Gl("Failed to link GLSL program".to_owned()))?;
