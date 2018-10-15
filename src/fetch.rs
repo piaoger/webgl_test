@@ -2,7 +2,7 @@
 
 // Borrowed from
 // https://github.com/AlexNav73/DotNetCore2018/blob/master/DotNetCore2018.WebApi/src/ui/src/fetch.rs
-
+// https://github.com/rustwasm/wasm-bindgen/blob/master/examples/fetch/src/lib.rs
 use js_sys::Promise;
 use web_sys::{Request, RequestInit, RequestMode};
 use serde::ser::Serialize;
@@ -29,6 +29,9 @@ pub enum Method {
     Delete,
 }
 
+// why use Cow here:
+// https://jwilm.io/blog/from-str-to-cow/
+// https://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html
 pub struct Fetch<'a> {
     uri: Cow<'a, str>,
     method: Method,
