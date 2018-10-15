@@ -362,11 +362,11 @@ webgl_test.then(bg => {
         console.log("account id", data.id);
     });
 
-    //const ip = bg.get_ip_info();
-    //prom.then((data: IpInfo) => {
-    //    console.log(data);
-    //    console.log("city id", data.city);
-    //});
+    const ip = bg.get_ip_info();
+    ip.then((data: IpInfo) => {
+        console.log(data);
+        console.log("city id", data.city);
+    });
 
     bg.test_delaunator();
 
